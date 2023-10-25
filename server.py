@@ -15,7 +15,7 @@ print('Сервер слухає на порту 12345...')
 
 # Приймаємо вхідне з'єднання
 client_socket, client_address = server_socket.accept()
-print('Зєднання встановлено з', client_address)
+print('З'єднання встановлено з', client_address)
 
 # Обмін повідомленнями
 while True:
@@ -24,3 +24,6 @@ while True:
     received_message = client_socket.recv(1024).decode('utf-8')
     print('Повідомлення від клієнта:', received_message)
 
+# Закриваємо з'єднання та сокет
+client_socket.close()
+server_socket.close()
