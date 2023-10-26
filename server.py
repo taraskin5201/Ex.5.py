@@ -24,3 +24,6 @@ while True:
     received_message = client_socket.recv(1024).decode('utf-8')
     print('Повідомлення від клієнта:', received_message)
 
+# Закриваємо з'єднання та сокет
+client_socket.close()
+server_socket.close()
